@@ -4,5 +4,13 @@ include ../components/banner/banner.pug
 include ../components/facts/facts.pug
 include ../components/emergency/emergency.pug
 
+section.splide(id= "slider1")
+    .splide__track
+        ul.splide__list
+            li.splide__slide(data-splide-interval=1000) 
+                include ../components/slides/slider1/1.pug
+            li.splide__slide(data-splide-interval=1000) B
+            li.splide__slide(data-splide-interval=1000) C
+
 
 include ../components/news/news.pug
