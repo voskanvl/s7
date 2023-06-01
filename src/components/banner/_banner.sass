@@ -1,9 +1,13 @@
 .banner
+    position: relative
     color: #fff
     background: url("../../../assets/image/banner.jpg") no-repeat
     background-size: cover
     background-position: 100% 0%
     margin: 22px 20px
+    min-height: calc(100dvh - 44px)
+    display: grid
+    place-items: center start
 
     &__container
         display: flex
@@ -11,7 +15,7 @@
         align-items: flex-start
         padding: 0px
         gap: 30px
-        width: max(50%, 433px)
+        width: min(100%, 786px)
         margin-bottom: ph(76)
 
     &__title
