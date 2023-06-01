@@ -1,2 +1,95 @@
 .emergency
     display: block
+
+    &__container
+        margin: ph(40) pw(44)
+
+    &__title
+        font-weight: 700
+        font-size: 64px
+        line-height: 112%
+        letter-spacing: -0.02em
+        color: #121212
+        text-align: center
+        margin-bottom: ph(40)
+
+    &__blocks
+        display: grid
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+        gap: pw(28)
+
+    &__block
+        background: #F5F5F5
+        display: flex
+        flex-direction: column
+        row-gap: ph(34)
+
+        img
+            border-radius: 24px
+
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: space-between
+        padding: 0px
+        gap: 50px
+        height: 100%
+
+        h3
+            font-weight: 600
+            +fz(20,1440,40)
+            line-height: 110%
+            letter-spacing: -0.02em
+            color: #121212
+
+        p
+            font-weight: 500
+            +fz(14,1440,24)
+            line-height: 150%
+            letter-spacing: -0.02em
+            color: #54565A
+
+        span
+            position: relative
+            display: inline-block
+            padding-inline: 0.2em
+
+            &::before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 10px
+                background-image: url("../../../assets/svg/emergency/avocado-line.svg")
+                background-repeat: no-repeat
+                background-size: contain
+                background-position: center
+                top: 95%
+
+            &.underlime
+                &::before
+                    background-image: url("../../../assets/svg/emergency/lime-line.svg")
+
+    &__controls
+        display: flex
+        gap: 20px
+
+        & > *
+            border: 1px solid #121212
+            display: grid
+            place-items: center
+            padding: 4px
+            text-decoration: none
+            font-weight: 600
+            font-size: 20px
+            line-height: 140%
+            letter-spacing: -0.02em
+            color: #121212
+
+            &:nth-child(1)
+                border-radius: 26px
+                padding-inline: 1em
+
+            &:last-child
+                border-radius: 50%
+                aspect-ratio: 1

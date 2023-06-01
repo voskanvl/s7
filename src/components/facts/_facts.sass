@@ -1,2 +1,79 @@
 .facts
     display: block
+
+    &__container
+        margin: ph(80) 0 ph(82)
+
+    &__title
+        +fz(36,1920,64)
+        font-weight: 700
+        font-size: 64px
+        line-height: 112%
+        letter-spacing: -0.02em
+        color: #121212
+        text-align: center
+        margin-bottom: ph(34)
+
+        & > .circled
+            background: url("../../../assets/svg/facts/arounded.svg") no-repeat
+            background-size: 100%
+            background-position: center
+            padding: 12px
+
+    &__blocks
+        display: grid
+        grid-template-columns: repeat(2, minmax(0,1fr))
+        gap: 28px
+        place-items: center
+        padding-inline: pw(159)
+
+    &__block
+        width: 100%
+        & > picture, img
+            border-radius: 28px
+            overflow: hidden
+        & > picture > img
+            width: 100%
+
+        &:nth-child(2)
+            position: relative
+            & > picture
+                position: relative
+                &::after
+                    content: ""
+                    background: url("../../../assets/svg/facts/2-3.svg") no-repeat
+                    background-size: contain
+                    position: absolute
+                    width: 28%
+                    height: 300px
+                    z-index: 2
+                    top: 56%
+                    right: 98%
+
+        &:nth-child(3)
+            position: relative
+            overflow: visible
+
+            &::before
+                content: ""
+                background: url("../../../assets/svg/facts/3.svg") no-repeat
+                background-size: contain
+                position: absolute
+                width: 25%
+                height: 300px
+                z-index: 2
+                top: -30%
+                left: -15%
+
+        &:nth-child(4)
+            position: relative
+            &::after
+                content: ""
+                background: url("../../../assets/svg/facts/4-6.svg") no-repeat
+                background-size: contain
+                position: absolute
+                width: 26%
+                height: 300px
+                z-index: 2
+                top: 50%
+                left: 86%
