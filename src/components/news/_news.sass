@@ -1,2 +1,34 @@
 .news
     display: block
+
+    &__container
+        margin: ph(80) pw(44)
+
+    &__title
+        font-weight: 700
+        +fz(36,1440,64)
+        line-height: 112%
+        letter-spacing: -0.02em
+        margin-bottom: 36px
+
+        span
+            position: relative
+            display: inline-block
+
+            &::before
+                content: ""
+                position: absolute
+                top: 100%
+                left: 0
+                width: 100%
+                height: 12px
+                background: url("../../../assets/svg/two-green-lines.svg") no-repeat
+                background-size: contain
+                color: #121212
+
+    &__list
+        list-style: none
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(max(30%,285px),1fr))
+        row-gap: ph(60)
+        column-gap: pw(28)

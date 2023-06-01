@@ -1,0 +1,21 @@
+mixin news-card(data)
+    .news-card 
+        .news-card__container 
+            .news-card__image
+                img(src= data.image, alt="data")
+                .news-card__controls 
+                    a(href="#") Авиация
+                    a(href="#") #Детали
+            .news-card__content
+                .news-card__row 
+                    div
+                        span= data.date
+                        span.point ●
+                        span= data.author
+                    div 
+                        img.note(src="../../../assets/icons/note.svg" alt="note")
+                        span= data.votes
+                h4.news-card__subhead= data.subhead
+                h4.news-card__text= data.text
+
+

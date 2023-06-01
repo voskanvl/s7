@@ -1,0 +1,63 @@
+news:
+  - image: "../../assets/image/news/1.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+
+  - image: "../../assets/image/news/2.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+    
+  - image: "../../assets/image/news/3.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/4.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/5.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/6.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/7.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/8.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/9.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
+  - image: "../../assets/image/news/10.jpg"
+    date: May 12
+    author: Мария Осетрова
+    subhead: Sub-head
+    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    votes: 1
