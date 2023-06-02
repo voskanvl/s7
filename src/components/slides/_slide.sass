@@ -1,7 +1,7 @@
 .slide
     background: linear-gradient(287.24deg, #6A7A76 -6.6%, #4B6062 93.25%)
     border-radius: 32px
-    height: 720px
+    height: ph(720)
     color: #fff
     position: relative
     display: grid
@@ -80,20 +80,22 @@
     img.large
         width: 100%
         height: 100%
+        object-fit: cover
+        object-position: 80% 50%
 
     .s7logo
         position: absolute
         z-index: 2
         bottom: ph(102)
-        width: min(580px, 100%)
+        width: min(580px, 97%)
         line-height: 1
 
         display: flex
         align-items: center
         justify-content: center
-        column-gap: 31px
+        column-gap: pw(31)
         font-weight: 700
-        font-size: 32px
+        +fz(16,1440,32)
 
         h2
             width: fit-content
@@ -103,7 +105,19 @@
         z-index: 0
         bottom: 0
         left: pw(52)
-        bottom: calc(-1 * ph(40))
+        bottom: 0px
+        width: 33%
+
+        & > svg
+            width: 100%
+
+    .content-wrap
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+
+        margin-left: auto
+        z-index: 3
 
     .label
         background: #C4D600
@@ -115,7 +129,7 @@
         padding-left: pw(64)
         border-radius: 90px 0 0 90px
 
-        position: absolute
+        // position: absolute
         right: 0
         top: ph(60)
         max-width: 870px
@@ -123,15 +137,17 @@
 
     .content-block
         max-width: 696px
-        position: absolute
+        // position: absolute
         right: pw(110)
-        bottom: ph(138)
+        top: 284px
+        margin: ph(40) pw(110) 0 1em
 
         h2
             font-weight: 600
             +fz(20,1440,40)
             line-height: 1.1
             letter-spacing: -0.04em
+            margin-bottom: ph(20)
 
         p
             font-weight: 400
