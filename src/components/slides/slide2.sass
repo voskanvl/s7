@@ -1,0 +1,52 @@
+.slide2
+    @extend .slide
+    background: url("../../../assets/image/slides/slider2/bg.jpg") no-repeat
+    background-size: cover
+    background-position: center
+    color: #fff
+    place-items: center start
+
+    &__container
+        max-width: 809px
+        margin-left: pw(114)
+        z-index: 2
+
+    .left
+        display: flex
+        flex-direction: column
+
+    article
+        display: flex
+        align-items: center
+        font-weight: 500
+        +fz(16,1440,32)
+        line-height: 38px
+
+        & > img
+            padding: 15px
+
+        span
+            margin-top: 0
+
+    h2
+        font-weight: 600
+        +fz(20,1440,40)
+        line-height: 1
+        letter-spacing: -0.04em
+
+    p
+        font-weight: 500
+        +fz(15,1440,30)
+        line-height: 127%
+
+    .flight
+        position: absolute
+        right: pw(105)
+        top: 50%
+        translate: 0 -50%
+        height: 100%
+        width: max(300px,33%)
+
+        & > svg
+            width: 100%
+            height: 100%
