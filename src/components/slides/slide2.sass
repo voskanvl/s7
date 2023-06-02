@@ -1,3 +1,6 @@
+.slide2.slide2--dark
+    background: linear-gradient(287.24deg, #6A7A76 -6.6%, #4B6062 93.25%)
+
 .slide2
     @extend .slide
     background: url("../../../assets/image/slides/slider2/bg.jpg") no-repeat
@@ -7,13 +10,28 @@
     place-items: center start
 
     &__container
-        max-width: 809px
+        max-width: 805px
         margin-left: pw(114)
         z-index: 2
 
     .left
         display: flex
         flex-direction: column
+        row-gap: ph(20)
+        justify-content: space-between
+
+        &--up, &--10up
+            // position: absolute
+            translate: 0 -25%
+
+            @media (height <540px)
+                translate: 0 0
+
+        &--10up
+            translate: 0 -10%
+
+        &--all
+            height: ph(500)
 
     article
         display: flex
@@ -34,6 +52,9 @@
         line-height: 1
         letter-spacing: -0.04em
 
+        &.mb
+            margin-bottom: ph(41)
+
     p
         font-weight: 500
         +fz(15,1440,30)
@@ -45,8 +66,33 @@
         top: 50%
         translate: 0 -50%
         height: 100%
-        width: max(300px,33%)
+        width: max(300px,354 / 1352 * 100%)
 
         & > svg
             width: 100%
             height: 100%
+
+        & > img
+            width: 100%
+            object-fit: contain
+
+    .clouds
+        position: absolute
+        width: 50%
+        bottom: 0
+        right: pw(36)
+
+        & > svg
+            width: 100%
+
+    .all
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: 100% 100%
+
+        @media (width > 1440px)
+            object-position: unset
