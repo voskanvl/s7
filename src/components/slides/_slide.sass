@@ -1,0 +1,76 @@
+.slide
+    background: linear-gradient(287.24deg, #6A7A76 -6.6%, #4B6062 93.25%)
+    border-radius: 32px
+    height: 720px
+    color: #fff
+    display: grid
+    place-items: center
+
+    &--reset
+        place-items: start
+
+    &__container
+        width: min(100%,873px)
+        display: flex
+        flex-direction: column
+        row-gap: 24px
+
+        &--wide
+            width: auto
+            margin: ph(100) pw(100)
+
+    &__text-block
+        display: grid
+        grid-template-columns: 92px 1fr
+        grid-template-areas: "icon head" "EMPTY text"
+        place-items: center start
+
+        svg
+            grid-area: icon
+
+        h2
+            grid-area: head
+            font-weight: 600
+            +fz(20,1440,40)
+            line-height: 1
+            letter-spacing: -0.04em
+
+        p
+            grid-area: text
+            font-weight: 400
+            +fz(16,1440,32)
+            line-height: 119%
+
+    .slide7
+
+        h2
+            font-weight: 600
+            font-size: 40px
+            line-height: 1
+            letter-spacing: -0.04em
+            margin-bottom: ph(20)
+
+        p
+            +fz(16,1440,32)
+            line-height: 119%
+
+    .flight
+        position: absolute
+        right: 0
+        bottom: ph(68)
+        width: 70%
+        display: flex
+        justify-content: flex-end
+
+        &--naked
+            right: 41px
+            bottom: 41px
+            width: 150px
+            height: 47px
+
+            & > svg
+                width: 100%
+                height: 100%
+
+    #takeoff
+        margin-top: ph(60)
