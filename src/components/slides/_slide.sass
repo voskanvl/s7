@@ -23,12 +23,15 @@
 
     &__text-block
         display: grid
-        grid-template-columns: 92px 1fr
+        grid-template-columns: max(48px,pw(92)) 1fr
+        grid-auto-rows: auto
         grid-template-areas: "icon head" "EMPTY text"
         place-items: center start
 
         svg
             grid-area: icon
+            width: 100%
+            height: 100%
 
         h2
             grid-area: head
@@ -40,14 +43,15 @@
         p
             grid-area: text
             font-weight: 400
-            +fz(16,1440,32)
+            +fz(12,1440,32)
             line-height: 119%
 
     .slide7
-
+        z-index: 3
+        max-width: 876px
         h2
             font-weight: 600
-            font-size: 40px
+            +fz(20,1440,40)
             line-height: 1
             letter-spacing: -0.04em
             margin-bottom: ph(20)
@@ -63,6 +67,9 @@
         width: 70%
         display: flex
         justify-content: flex-end
+
+        @media (height < 730px)
+            bottom: -10%
 
         &--naked
             right: 41px
@@ -122,11 +129,11 @@
     .label
         background: #C4D600
         font-weight: 600
-        +fz(24,1440,48)
+        +fz(18,1440,48)
         line-height: 1
         color: #090505
         padding-block: ph(44)
-        padding-left: pw(64)
+        padding-left: clamp(30px,64 / 1440 * 100vw,64px)
         border-radius: 90px 0 0 90px
 
         // position: absolute
@@ -144,12 +151,12 @@
 
         h2
             font-weight: 600
-            +fz(20,1440,40)
+            +fz(16,1440,40)
             line-height: 1.1
             letter-spacing: -0.04em
             margin-bottom: ph(20)
 
         p
             font-weight: 400
-            +fz(16,1440,32)
+            +fz(14,1440,32)
             line-height: 1.19
