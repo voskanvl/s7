@@ -3,6 +3,7 @@
     border-radius: 32px
     height: 720px
     color: #fff
+    position: relative
     display: grid
     place-items: center
     overflow: hidden
@@ -96,3 +97,43 @@
 
         h2
             width: fit-content
+
+    .man
+        position: absolute
+        z-index: 0
+        bottom: 0
+        left: pw(52)
+        bottom: calc(-1 * ph(40))
+
+    .label
+        background: #C4D600
+        font-weight: 600
+        +fz(24,1440,48)
+        line-height: 1
+        color: #090505
+        padding-block: ph(44)
+        padding-left: pw(64)
+        border-radius: 90px 0 0 90px
+
+        position: absolute
+        right: 0
+        top: ph(60)
+        max-width: 870px
+        margin-left: 1em
+
+    .content-block
+        max-width: 696px
+        position: absolute
+        right: pw(110)
+        bottom: ph(138)
+
+        h2
+            font-weight: 600
+            +fz(20,1440,40)
+            line-height: 1.1
+            letter-spacing: -0.04em
+
+        p
+            font-weight: 400
+            +fz(16,1440,32)
+            line-height: 1.19
