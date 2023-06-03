@@ -1,4 +1,7 @@
 .facts
+    --delay: 0ms
+    --duration: 6000ms
+    --dasharray: 1860
     display: block
 
     &__container
@@ -15,10 +18,25 @@
         margin-bottom: ph(34)
 
         & > .circled
-            background: url("../../../assets/svg/facts/arounded.svg") no-repeat
-            background-size: 94%
-            background-position: center
-            padding: 12px
+            // background: url("../../../assets/svg/facts/arounded.svg") no-repeat
+            // background-size: 94%
+            // background-position: center
+            // padding: 12px
+            position: relative
+
+            & > svg
+                position: absolute
+                left: 50%
+                top: 50%
+                translate: -50% -50%
+
+                stroke-dasharray: var(--dasharray)
+                stroke-dashoffset: var(--dasharray)
+
+                &[inter]
+                    animation: draw var(--duration) ease-in-out var(--delay)
+                    animation-iteration-count: 1
+                    animation-fill-mode: forwards
 
     &__blocks
         display: grid
@@ -91,3 +109,10 @@
                 z-index: 2
                 top: 50%
                 left: 86%
+
+    @keyframes draw
+        0%
+            stroke-dashoffset: var(--dasharray)
+
+        100%
+            stroke-dashoffset: 0
