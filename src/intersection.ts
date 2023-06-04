@@ -1,14 +1,17 @@
 export default function intersection() {
-    const anim1 = document.querySelector<SVGAElement>("#anim1")
-    // const svg = document.querySelector<SVGAElement>("#anim1 svg")
+    const elementsToAnimate = [
+        document.querySelector<SVGAElement>("#anim1 > svg"),
+        document.querySelector<SVGAElement>(".facts__title > .circled > svg"),
+    ]
 
     const cb: IntersectionObserverCallback = ([
-        { isIntersecting },
+        { isIntersecting, target },
     ]: IntersectionObserverEntry[]) => {
-        console.log(isIntersecting)
-        isIntersecting ? anim1?.setAttribute("inter", "inter") : anim1?.removeAttribute("inter")
+        setTimeout(() => {
+            isIntersecting ? target.setAttribute("inter", "inter") : target.removeAttribute("inter")
+        }, 600)
     }
 
     const iso = new IntersectionObserver(cb, { threshold: [1] })
-    anim1 && iso.observe(anim1)
+    elementsToAnimate.forEach(e => e && iso.observe(e))
 }
