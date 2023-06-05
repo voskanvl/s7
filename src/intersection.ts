@@ -2,6 +2,8 @@ export default function intersection() {
     const elementsToAnimate = [
         document.querySelector<SVGAElement>("#anim1 > svg"),
         document.querySelector<SVGAElement>(".facts__title > .circled > svg"),
+        document.querySelector<SVGAElement>(".facts__block:nth-child(4) > svg"),
+        document.querySelector<SVGAElement>(".facts__block:nth-child(3) > svg"),
     ]
 
     const cb: IntersectionObserverCallback = ([

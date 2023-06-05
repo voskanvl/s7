@@ -1,6 +1,6 @@
 .facts
     --delay: 0ms
-    --duration: 6000ms
+    --duration: 2000ms
     --dasharray: 1860
     display: block
 
@@ -58,15 +58,6 @@
             & > picture
                 position: relative
                 // &::after
-                //     content: ""
-                //     background: url("../../../assets/svg/facts/2-3.svg") no-repeat
-                //     background-size: contain
-                //     position: absolute
-                //     width: 28%
-                //     height: 300px
-                //     z-index: 2
-                //     top: 56%
-                //     right: 98%
             & > svg
                 position: absolute
                 top: 40%
@@ -85,29 +76,37 @@
             position: relative
             overflow: visible
 
-            &::before
-                content: ""
-                background: url("../../../assets/svg/facts/3.svg") no-repeat
-                background-size: contain
+            & > svg
                 position: absolute
                 width: 25%
                 height: 300px
                 z-index: 2
-                top: -30%
+                top: -50%
                 left: -15%
+                z-index: 2
+                scale: 0 0
+                // transition: transform cubic-bezier(.5,-0.5,.5,1.5) 0.6s
+                // transform-origin: 100% 100%
+
+                &[inter]
+                    animation: flash 0.6s cubic-bezier(.5,-0.5,.5,1.5) infinite both alternate
 
         &:nth-child(4)
             position: relative
-            &::after
-                content: ""
-                background: url("../../../assets/svg/facts/4-6.svg") no-repeat
-                background-size: contain
+
+            & > svg
                 position: absolute
-                width: 26%
-                height: 300px
+                top: 0%
+                left: 75%
+                height: 23vh
+                width: 20vw
                 z-index: 2
-                top: 50%
-                left: 86%
+                scale: 1 0
+                transition: transform cubic-bezier(.5,-0.5,.5,1.5) 0.6s
+                transform-origin: 50% 0
+
+                &[inter]
+                    scale: 1 1
 
     @keyframes draw
         0%
@@ -115,3 +114,10 @@
 
         100%
             stroke-dashoffset: 0
+
+    @keyframes flash
+        0%
+            scale: 0 0
+
+        100%
+            scale: 1 1
