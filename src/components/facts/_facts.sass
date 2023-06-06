@@ -10,7 +10,6 @@
     &__title
         +fz(36,1440,64)
         font-weight: 700
-        font-size: 64px
         line-height: 112%
         letter-spacing: -0.02em
         color: #121212
@@ -29,6 +28,7 @@
                 left: 50%
                 top: 50%
                 translate: -50% -50%
+                width: min(219px, 110%)
 
                 stroke-dasharray: var(--dasharray)
                 stroke-dashoffset: var(--dasharray)
@@ -41,9 +41,14 @@
     &__blocks
         display: grid
         grid-template-columns: repeat(2, minmax(0,1fr))
+        grid-template-areas: "a b" "c d" "e f"
         gap: 28px
         place-items: center
         padding-inline: pw(159)
+
+        @media (width <= 768px)
+            grid-template-columns: 100%
+            grid-template-areas: "b" "a" "c" "d" "f" "e"
 
     &__block
         width: 100%
@@ -53,7 +58,11 @@
         & > picture > img
             width: 100%
 
+        &:nth-child(1)
+            grid-area: a
+
         &:nth-child(2)
+            grid-area: b
             position: relative
             & > picture
                 position: relative
@@ -72,26 +81,30 @@
                 &[inter]
                     scale: 1 1
 
+                @media (width <= 786px)
+                    display: none
+
         &:nth-child(3)
+            grid-area: c
             position: relative
             overflow: visible
 
             & > svg
                 position: absolute
-                width: 25%
-                height: 300px
+                height: 250px
                 z-index: 2
-                top: -50%
-                left: -15%
+                top: -150px
+                left: -60px
                 z-index: 2
                 scale: 0 0
                 // transition: transform cubic-bezier(.5,-0.5,.5,1.5) 0.6s
                 // transform-origin: 100% 100%
 
                 &[inter]
-                    animation: flash 0.6s cubic-bezier(.5,-0.5,.5,1.5) infinite both alternate
+                    animation: flash 0.6s cubic-bezier(.5,-0.5,.5,1.5) 3 both alternate
 
         &:nth-child(4)
+            grid-area: d
             position: relative
 
             & > svg
@@ -107,6 +120,12 @@
 
                 &[inter]
                     scale: 1 1
+
+        &:nth-child(5)
+            grid-area: e
+
+        &:nth-child(6)
+            grid-area: f
 
     @keyframes draw
         0%

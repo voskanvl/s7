@@ -9,6 +9,29 @@
     display: grid
     place-items: center start
 
+    @media (width <= 768px)
+        min-height: 887px
+
+    &.gt768
+        @media (width <= 768px)
+            display: none
+    &.lt768
+        display: none
+        background: linear-gradient(252.65deg, #6DDCE5 43.35%, #00C0BF 97.37%)
+        @media (width <= 768px)
+            display: block
+
+        #banner2
+            max-width: unset
+            width: 100vw
+            object-fit: cover
+            object-position: center
+            margin-left: calc(-1 * pw(34) - 20px)
+            margin-right: calc(-1 * pw(34) - 20px)
+
+        &:where(div,p)
+            text-align: center
+
     &__container
         display: flex
         flex-direction: column
@@ -20,7 +43,7 @@
 
     &__title
         font-weight: bold
-        +fz(48,1440,150)
+        +fz(48,1440,147)
 
     &__text-block
         display: flex
@@ -37,7 +60,7 @@
 
         & > p:nth-child(2)
             font-weight: 500
-            font-size: 20px
+            +fz(16,1440,20)
             line-height: 140%
             letter-spacing: -0.02em
             font-variant: small-caps

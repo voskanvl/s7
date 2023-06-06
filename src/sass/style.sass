@@ -14,21 +14,49 @@ body
 
 .splide
     margin: ph(40) pw(44)
+    aspect-ratio: 1352 / 720
+
+    .splide__track
+        height: 100%
+
+    .splide__list
+        height: 100%
+
+        .slide
+            height: 100%
 
 ul.splide__pagination
     width: max-content
-    padding: 0.5em 1em
+    padding: ph(8) pw(16)
     background: #121212
     border-radius: 25px
     column-gap: pw(12)
+    align-items: center
     left: 50%
     translate: -50% 0
-    bottom: ph(20)
+    bottom: 2vw
+
+    @media (width <= 600px )
+        bottom: -1.5rem
+        padding: 0
+        background: #0000
+
+        .splide__pagination__page
+            background: #BED600
+            opacity: 0.3
 
     .is-active
         scale: 1
         opacity: 1
 
     .splide__pagination__page
-        height: 10px
-        width: 10px
+        height: 1vw
+        width: 1vw
+
+button.splide__arrow
+    width: $index
+    height: $index
+
+    & > svg
+        width: 90%
+        height: 90%
