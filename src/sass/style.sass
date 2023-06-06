@@ -16,6 +16,9 @@ body
     margin: ph(40) pw(44)
     aspect-ratio: 1352 / 720
 
+    @media (width <= 425px)
+        aspect-ratio: 1352 / 1020
+
     .splide__track
         height: 100%
 
@@ -37,7 +40,7 @@ ul.splide__pagination
     bottom: 2vw
 
     @media (width <= 600px )
-        bottom: -1.5rem
+        bottom: calc(ph(24) * -1)
         padding: 0
         background: #0000
 
@@ -58,5 +61,5 @@ button.splide__arrow
     height: $index
 
     & > svg
-        width: 90%
-        height: 90%
+        width: 60%
+        height: 60%

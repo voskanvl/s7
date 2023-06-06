@@ -16,7 +16,7 @@
         place-items: start
 
     &__container
-        width: min(100%,873px)
+        width: min(873px, calc(100% - 2em))
         display: flex
         flex-direction: column
         row-gap: 1vw
@@ -26,11 +26,15 @@
             margin: ph(100) pw(100)
 
     &__text-block
+        --icon-index: 3.3
         display: grid
-        grid-template-columns: max(48px,pw(92)) 1fr
+        grid-template-columns: calc($index * var(--icon-index)) 1fr
         grid-auto-rows: auto
         grid-template-areas: "icon head" "EMPTY text"
         place-items: center start
+
+        @media (width <= 480px)
+            --icon-index: 2.3
 
         svg
             grid-area: icon
@@ -40,15 +44,16 @@
         h2
             grid-area: head
             font-weight: 600
-            +fz(20,1440,40)
+            +fz(14,1440,40)
+            // font-size: calc(40 / 1440 * 100vw)
             line-height: 1
             letter-spacing: -0.04em
 
         p
             grid-area: text
             font-weight: 400
-            // +fz(12,1440,32)
-            font-size: calc($index)
+            +fz(12,1440,32)
+            // font-size: calc(32 / 1440 * 100vw)
             line-height: 119%
 
     .slide7
@@ -76,8 +81,6 @@
 
         @media (width <= 600px)
             --margin-index: 2
-        @media (width <= 460px)
-            --margin-index: 1
 
     .flight
         position: absolute
@@ -129,54 +132,51 @@
             width: 100%
 
     .content-wrap
-        display: flex
-        flex-direction: column
-        align-items: flex-end
-
-        margin-left: auto
-        z-index: 3
+        place-self: center end
+        padding-left: pw(64)
         width: 64.349112%
+        z-index: 3
+        container: container / size
+        height: 70%
+
+        @media (width <= 425px)
+            height: 95%
 
     .label
         background: #C4D600
         font-weight: 600
-        +fz(14,1440,48)
+        // +fz(14,1440,48)
+        font-size: calc(48 / 1440 * 100vw)
         line-height: 1
         color: #090505
-        padding-block: 4cqh
+        padding-block: 1em
         padding-left: clamp(30px,64 / 1440 * 100vw,64px)
         border-radius: 90px 0 0 90px
 
         // position: absolute
         right: 0
         top: ph(60)
-        max-width: 870px
-        margin-left: 1em
+        margin-left: calc(-1 * pw(64))
 
     .content-block
-        max-width: 696px
-        // position: absolute
-        right: pw(110)
-        top: 284px
-        margin: 4vh pw(110) 0 clamp(30px,64 / 1440 * 100vw,64px)
-
+        margin-top: 4cqh
         h2
             font-weight: 600
-            +fz(16,1440,40)
+            +fz(13,1440,40)
             line-height: 1.1
             letter-spacing: -0.04em
             margin-bottom: ph(20)
 
         p
             font-weight: 400
-            +fz(14,1440,32)
+            +fz(11,1440,32)
             line-height: 1.19
 
     .s7logo
         position: absolute
         z-index: 2
         bottom: 14.166667%
-        width: min(615px, 97%)
+        width: calc( 800 / var(--width-block) * 100%)
         line-height: 1
 
         display: flex
@@ -186,8 +186,13 @@
         font-weight: 700
         +fz(16,1440,32)
 
+        @media (width <= 600px)
+            bottom: 2%
+            height: 60px
+
         h2
             width: fit-content
+            +fz(16, 1440, 64)
 
         svg
             width: 8.87574vw
