@@ -2,6 +2,7 @@
     background: linear-gradient(287.24deg, #6A7A76 -6.6%, #4B6062 93.25%)
 
 .slide2
+    --width-block: 1352
     @extend .slide
     background: url("../../../assets/image/slides/slider2/bg.jpg") no-repeat
     background-size: cover
@@ -10,54 +11,59 @@
     place-items: center start
 
     &__container
-        max-width: 805px
-        margin-left: pw(114)
+        margin-left: pw(102)
+        width: calc( 668 / var(--width-block) * 100%)
         z-index: 2
 
+        &--2
+            width: calc( 900/ var(--width-block) * 100%)
+
+    // &__container
+    //     max-width: 805px
+    //     margin-left: pw(114)
+    //     z-index: 2
+    //     width: calc( 805 / var(--width-block) * 100%)
+    //     height: 75%
+
+    //     @media (width <= 425px)
+    //         height: 90%
+
     .left
+        // container: container2 / size
+        height: 100%
         display: flex
         flex-direction: column
         row-gap: ph(20)
         justify-content: space-between
 
-        &--up, &--10up
-            // position: absolute
-            translate: 0 -25%
-
-            @media (height <540px)
-                translate: 0 0
-
-        &--10up
-            translate: 0 -10%
-
-        &--all
-            height: ph(500)
+        &--up
+            margin-top: -25%
 
     article
         display: flex
-        align-items: center
+        align-items: flex-start
         font-weight: 500
-        +fz(16,1440,32)
-        line-height: 38px
+        +fz(14,1440,32)
 
         & > img
-            padding: 15px
+            padding: 0 calc(15/1440*100vw)
+            width: clamp(40px, 132 / var(--width-block) * 100%, 72px)
 
         span
             margin-top: 0
 
     h2
         font-weight: 600
-        +fz(20,1440,40)
+        +fz(13,1440,40)
         line-height: 1
         letter-spacing: -0.04em
 
         &.mb
-            margin-bottom: ph(41)
+            margin-bottom: 2cqh
 
     p
         font-weight: 500
-        +fz(15,1440,30)
+        +fz(11,1440,30)
         line-height: 127%
 
     .flight
@@ -66,7 +72,7 @@
         top: 50%
         translate: 0 -50%
         height: 100%
-        width: max(300px,354 / 1352 * 100%)
+        width: calc(393 / var(--width-block) * 100% )
 
         & > svg
             width: 100%
@@ -96,3 +102,26 @@
 
         @media (width > 1440px)
             object-position: unset
+
+    .pilots2
+        position: absolute
+        bottom: -0.5rem
+        right: 0
+        width: calc(619 / var(--width-block) * 100%)
+
+        & > svg
+            width: 100%
+            height: 100%
+
+    .class-room
+        position: absolute
+        bottom: -2rem
+        right: 0
+        width: 100%
+        height: calc(100% + 2rem)
+
+        & > img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: 80% 100%
