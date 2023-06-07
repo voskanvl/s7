@@ -5,7 +5,8 @@
     background-size: cover
     background-position: 100% 0%
     margin: 22px 20px
-    min-height: calc(100dvh - 44px)
+    // min-height: calc(100dvh - 44px)
+    min-height: 764px
     display: grid
     place-items: center start
 
@@ -52,6 +53,10 @@
         align-items: flex-start
         padding: 0px
         gap: 20px
+        width: 68%
+
+        @media (width <= 768px)
+            margin-inline: auto
 
         & > p:first-child
             font-weight: 500
@@ -65,3 +70,4 @@
             line-height: 140%
             letter-spacing: -0.02em
             font-variant: small-caps
+            opacity: 0.8
