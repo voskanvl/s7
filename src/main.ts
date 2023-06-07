@@ -1,7 +1,7 @@
 import "./sass/style.sass"
 import "@splidejs/splide/css"
-import Splide, { Options } from "@splidejs/splide"
-import intersection from "./intersection"
+import { Splide, Options } from "@splidejs/splide"
+import intersection from "./intersection.ts"
 
 const options: Options = {
     type: "loop",

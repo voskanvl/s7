@@ -1,14 +1,18 @@
 {
-    "name": "vite-standart-app",
+    "name": "s7",
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "imports": {
+        "#*": "./src/*"
+    },
     "scripts": {
         "dev": "vite  --host",
         "build": "tsc && vite build",
         "preview": "vite preview",
         "createComponent": " bash ./create-component.bash",
-        "tar": "tar -czvf dist.tar.gz ./dist"
+        "tar": "tar -czvf s7.tar.gz ./dist",
+        "build+assets+tar": "tsc && vite build && cp -r ./assets/* ./dist/assets && tar -czvf s7.tar.gz ./dist"
     },
     "devDependencies": {
         "@types/node": "latest",
