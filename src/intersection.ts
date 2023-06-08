@@ -10,8 +10,8 @@ export default function intersection() {
         { isIntersecting, target },
     ]: IntersectionObserverEntry[]) => {
         setTimeout(() => {
-            isIntersecting ? target.setAttribute("inter", "inter") : target.removeAttribute("inter")
-        }, 600)
+            isIntersecting && target.setAttribute("inter", "inter")
+        }, 1000)
     }
 
     const iso = new IntersectionObserver(cb, { threshold: [1] })
