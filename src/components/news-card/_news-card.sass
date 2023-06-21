@@ -7,6 +7,11 @@
             border-radius: 20px
             width: 100%
 
+            @media (width <= 768px)
+                height: 186px
+                object-fit: cover
+                object-position: center
+
     &__controls
         display: flex
         align-items: center
@@ -36,6 +41,14 @@
             color: #FFFFFF
             text-decoration: none
 
+            &:nth-child(1)
+                @media (width <= 768px)
+                    padding: 4px
+
+            &:nth-child(2)
+                @media (width <= 768px)
+                    padding: 4px 8px
+
     &__content
         margin-top: 16px
 
@@ -63,6 +76,9 @@
         letter-spacing: -0.02em
         color: #121212
 
+        @media (width <= 768px)
+            line-height: 130%
+
     &__text
         font-weight: 500
         +fz(14,1440,20)
@@ -70,3 +86,6 @@
         letter-spacing: -0.02em
         font-variant: small-caps
         color: #54565A
+
+        @media (width <= 768px)
+            line-height: 171%

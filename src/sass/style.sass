@@ -10,18 +10,20 @@ body
 
 .panel
     padding: ph(36) pw(34)
-    border-radius: 34px
+    border-radius: clamp(30px,60 / 1440 * 100vw ,60px)
+
+    @media (width <= 768px)
+        padding: 16px
 
 .splide
-    margin: ph(40) pw(44)
+    margin: ph(120) pw(44)
     aspect-ratio: 1352 / 720
 
     @media (width <= 768px)
-        margin: 16px
-        margin-bottom: 32px
+        margin: 32px 16px 0
 
-    @media (width <= 460px)
-        aspect-ratio: 1352 / 1020
+    // @media (width <= 460px)
+    //     aspect-ratio: 1352 / 1020
 
         // &#slider2
             // aspect-ratio: 1352 / 1120
@@ -67,8 +69,11 @@ ul.splide__pagination
         width: 1vw
 
 button.splide__arrow
-    width: calc($index * 2.05)
-    height: calc($index * 2.05)
+    width: clamp(12px, 48 / 1440 * 100vw, 48px)
+    height: clamp(12px, 48 / 1440 * 100vw, 48px)
+    background: #fff
+    opacity: 1
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1)
 
     & > svg, img
         width: 60%

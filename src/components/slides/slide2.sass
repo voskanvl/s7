@@ -18,6 +18,9 @@
         width: calc( 668 / var(--width-block) * 100%)
         z-index: 2
 
+        @media (width <= 1024px)
+            margin-left: 2.5rem
+
         &--2
             width: calc( 900/ var(--width-block) * 100%)
 
@@ -43,10 +46,11 @@
 
         & > img
             padding: 0 calc(15/1440*100vw)
-            width: clamp(40px, 132 / var(--width-block) * 100%, 72px)
+            width: clamp(30px, 132 / var(--width-block) * 100%, 72px)
 
         span
             margin-top: 0
+            +fz(10,1440,32)
 
     h2
         font-weight: 600
@@ -62,7 +66,7 @@
 
     p
         font-weight: 500
-        +fz(11,1440,30)
+        +fz(9,1440,30)
         line-height: 127%
 
     .flight
@@ -132,6 +136,9 @@
         flex-direction: column
         justify-content: center
         width: calc( 668 / var(--width-block) * 100%)
+
+        @media (width <= 1024px)
+            margin-left: 3rem
 
         .left
             row-gap: 1em

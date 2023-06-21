@@ -2,7 +2,11 @@
     display: block
 
     &__container
-        margin: ph(40) pw(44)
+        margin: ph(40) pw(44) 0
+
+        @media (width <= 768px)
+            margin-inline: 16px
+            margin-top: 32px
 
     &__title
         font-weight: 700
@@ -13,16 +17,23 @@
         text-align: center
         margin-bottom: ph(40)
 
+        @media (width <= 768px)
+            margin-bottom: 32px
+
     &__blocks
         display: grid
         grid-template-columns: repeat(auto-fit, minmax(max(48%,285px),1fr))
-        gap: pw(28)
+        column-gap: pw(28)
+        row-gap: 24px
 
     &__block
         background: #F5F5F5
         display: flex
         flex-direction: column
         row-gap: ph(34)
+
+        @media (width <= 768px)
+            row-gap: 16px
 
         img
             border-radius: 24px
@@ -38,12 +49,18 @@
         row-gap: ph(50)
         height: 100%
 
+        @media (width <= 768px)
+            row-gap: 0
+
         h3
             font-weight: 600
             +fz(20,1440,40)
             line-height: 110%
             letter-spacing: -0.02em
             color: #121212
+
+            @media (width <= 768px)
+                line-height: 130%
 
         p
             font-weight: 500
@@ -52,10 +69,14 @@
             letter-spacing: -0.02em
             color: #54565A
 
+            @media (width <= 768px)
+                line-height: 171%
+                margin-bottom: 12px
+
         span
             position: relative
             display: inline-block
-            padding-inline: 0.2em
+            // padding-inline: 0.2em
 
             &::before
                 content: ""
@@ -77,7 +98,7 @@
 
     &__controls
         display: flex
-        gap: 20px
+        gap: clamp(16px,20 / 1440 * 100vw,20px)
 
         & > *
             border: 1px solid #121212
@@ -86,15 +107,16 @@
             padding: 4px
             text-decoration: none
             font-weight: 600
-            font-size: 20px
+            +fz(16, 1440, 20)
             line-height: 140%
             letter-spacing: -0.02em
             color: #121212
             background: #fff
+            height: 48px
 
             &:nth-child(1)
                 border-radius: 26px
-                padding-inline: 1em
+                padding-inline: 36px
 
             &:last-child
                 border-radius: 50%
