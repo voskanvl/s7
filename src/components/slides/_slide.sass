@@ -28,36 +28,58 @@
         @media (width <= 1024px)
             width: calc( 100% - 4rem - clamp(12px, 48 / 1440 * 100vw, 48px) )
 
-    &__text-block
-        --icon-index: 3.3
-        display: grid
-        grid-template-columns: calc($index * var(--icon-index)) 1fr
-        grid-auto-rows: auto
-        grid-template-areas: "icon head" "EMPTY text"
-        place-items: center start
+    // &__text-block
+    //     --icon-index: 3.3
+    //     display: grid
+    //     grid-template-columns: calc($index * var(--icon-index)) 1fr
+    //     grid-auto-rows: auto
+    //     grid-template-areas: "icon head" "EMPTY text"
+    //     place-items: center start
 
-        @media (width <= 480px)
-            --icon-index: 2
+    //     @media (width <= 480px)
+    //         --icon-index: 2
 
-        svg
-            grid-area: icon
-            width: 100%
-            height: 100%
+    //     svg
+    //         grid-area: icon
+    //         width: 100%
+    //         height: 100%
 
-        h2
-            grid-area: head
-            font-weight: 600
-            +fz(13,1440,40)
-            // font-size: calc(40 / 1440 * 100vw)
-            line-height: 1
-            letter-spacing: -0.04em
+    //     h2
+    //         grid-area: head
+    //         font-weight: 600
+    //         +fz(13,1440,40)
+    //         // font-size: calc(40 / 1440 * 100vw)
+    //         line-height: 1
+    //         letter-spacing: -0.04em
+    //         position: relative
+
+    //     p
+    //         grid-area: text
+    //         font-weight: 400
+    //         +fz(10,1440,32)
+    //         // font-size: calc(32 / 1440 * 100vw)
+    //         line-height: 119%
+    &__text-string
+        display: flex
+        align-items: center
+
+        svg, span
+            width: calc(92 / 1440 * 100vw)
+            height: calc(92 / 1440 * 100vw)
+            flex: 0 0 calc(92 / 1440 * 100vw)
+
+        span
+            height: 0
 
         p
-            grid-area: text
             font-weight: 400
-            +fz(10,1440,32)
-            // font-size: calc(32 / 1440 * 100vw)
-            line-height: 119%
+            +fz(12,1440, 32)
+
+        h2
+            font-weight: 600
+            line-height: 1
+            +fz(14,1440,40)
+            letter-spacing: -0.8px
 
     .slide7
         --margin-index: 4
@@ -148,7 +170,7 @@
             margin-top: 25px
 
         @media (width <= 480px)
-            width: 70%
+            width: 68%
         @media (width <= 435px)
             height: 95%
 

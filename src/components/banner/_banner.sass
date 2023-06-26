@@ -1,9 +1,11 @@
 .banner
     position: relative
     color: #fff
-    background: url("../../../assets/image/banner.jpg") no-repeat
+    // background: url("../../../assets/image/banner.jpg") no-repeat
+    background: linear-gradient(226deg, #6DDCE5 43.23%, #00C0BF 100%)
     background-size: cover
     background-position: 100% 0%
+    overflow: hidden
     margin: 22px 20px
     // min-height: calc(100dvh - 44px)
     min-height: 764px
@@ -14,6 +16,9 @@
         min-height: 887px
 
     &.gt768
+        height: 720px
+        &.panel
+            padding-right: 0
         @media (width <= 768px)
             display: none
     &.lt768
@@ -34,6 +39,19 @@
         &:where(div,p)
             text-align: center
 
+    &__split
+        display: flex
+        justify-content: space-between
+
+    &__plane
+
+        & > img
+            width: min(864px,60vw)
+            position: absolute
+            // bottom: 0
+            right: 0
+            z-index: 0
+
     &__container
         display: flex
         flex-direction: column
@@ -47,6 +65,8 @@
         font-weight: bold
         letter-spacing: -0.04em
         +fz(48,1440,150)
+        line-height: 1
+        white-space: nowrap
 
     &__text-block
         display: flex

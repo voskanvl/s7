@@ -1,10 +1,16 @@
 .slide 
     .slide__container 
         .slide__text-block 
-            include ../../../../assets/icons/med-cross.svg
-            h2 Медицинский осмотр
-            p Если врач обнаружит хотя бы насморк, на рейс назначают другого пилота
+            .slide__text-string
+                include ../../../../assets/icons/med-cross.svg
+                h2(data-svg="../../../../assets/icons/med-cross.svg") Медицинский осмотр
+            .slide__text-string
+                span
+                p Если врач обнаружит хотя бы насморк, на рейс назначают другого пилота
         .slide__text-block 
-            include ../../../../assets/icons/brief.svg
-            h2 Брифинг
-            p Во время брифинга пилоты смотрят погоду на маршруте, строят оптимальный маршрут с учетом всех ограничений, определяют запасные аэродромы
+            .slide__text-string
+                include ../../../../assets/icons/brief.svg
+                h2(data-svg="../../../../assets/icons/brief.svg") Брифинг
+            .slide__text-string
+                span
+                p Во время брифинга пилоты смотрят погоду на маршруте, строят оптимальный маршрут с учетом всех ограничений, определяют запасные аэродромы
